@@ -1,0 +1,1106 @@
+# Imports
+#:import utils kivy.utils
+
+
+<PrimaryView>:
+    canvas:
+        Color: 
+            rgba: 1, 1, 1, 1
+        Rectangle: 
+            pos: self.pos
+            size: self.size
+    orientation: 'horizontal'
+    ScreenManager:
+        id: scm
+        Screen:
+            id: products
+            name: 'products'
+            ScrollView:
+                bar_width: 0
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: self.minimum_height
+                    spacing: '15sp'
+                    Widget:
+                        size_hint_y: None
+                        height: '50sp'
+                    Label:
+                        size_hint_y: None
+                        height: '50sp'
+                        text: 'Requisições'
+                        color: 0, 0, 0, .8
+                        padding_x: '5sp'
+                        valign: 'middle'
+                        halign: 'left'
+                        text_size: self.size
+                        font_size: '30sp'
+                        bold: True
+                    Barras:
+                    Barras:
+                    Barras:                        
+                    Barras:
+                    Barras:
+                    Barras:   
+                    Barras:
+                    Barras:
+                    Barras:
+                
+        Screen:
+            name: 'stand'
+            ScrollView:
+                bar_width: 0
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: self.minimum_height
+                    spacing: '15sp'
+                    Widget:
+                        size_hint_y: None
+                        height: '50sp'
+                    Label:
+                        size_hint_y: None
+                        height: '50sp'
+                        text: 'Produtos'
+                        color: 0, 0, 0, .8
+                        padding_x: '5sp'
+                        valign: 'middle'
+                        halign: 'left'
+                        text_size: self.size
+                        font_size: '30sp'
+                        bold: True
+                    BarrasP:
+                    BarrasP:
+                    BarrasP:                        
+                    BarrasP:
+                    BarrasP:
+                    BarrasP:   
+                    BarrasP:
+                    BarrasP:
+                    BarrasP: 
+                    Button:
+                        size_hint_y: None
+                        height: '50sp'
+                        on_parent: root.animation_drop_back(drop_menu_open_produt)
+                        on_press: drop_menu_open_produt.open(self)
+                        on_release: root.animation_drop(drop_menu_open_produt)
+                    DropDown:
+                        id: drop_menu_open_produt
+                        pos_hint: {'top': .95 , 'x': -1}
+                        auto_width: False 
+                        width: "275sp"
+                        padding_x: '15sp'
+                        bar_width: 0
+                        opcity: 0
+                        BoxLayout:
+                            size_hint: None, None
+                            width: drop_menu_open_produt.width
+                            height: '550sp'
+                            canvas:
+                                Color:
+                                    #rgba: utils.get_color_from_hex('#ecf8f2ff')
+                                Rectangle:
+                                    pos: self.pos
+                                    size: self.size
+                                    source: 'source/image/meio3.png'
+                            orientation: 'vertical'
+                            BoxLayout:
+                                size_hint_y: None
+                                height: '60sp'
+                                Label:
+                                    size_hint_y: None
+                                    height: '35sp'
+                                    text_size: self.size
+                                    valign: 'middle'
+                                    halign: 'left'
+                                    padding_x: '15sp'
+                                    text: 'Batata branca'
+                                    color: 0, 0, 0, .9
+                                    font_size: '25sp'
+                                    bold: True
+
+                            BoxLayout:
+                                id: image
+                                size_hint_y: None
+                                height: '300sp'
+                                canvas:
+                                    Rectangle:
+                                        pos: self.pos
+                                        size: self.size
+                                        source: 'source/image/meio.png'
+                                Image:
+                                    source: 'source/image/batata.png'
+                                    allow_stretch: True
+                                    size_hint_y: None 
+                                    height: '300sp' 
+                            BoxLayout: 
+                                size_hint_y: None
+                                height: '200sp'
+                                padding: '15sp', '15sp', '15sp', '15sp'
+                                BoxLayout:
+                                    orientation: 'vertical'
+                                    canvas:
+                                        Rectangle:
+                                            source: 'source/image/meio2.png'
+                                            pos: self.pos
+                                            size: self.size
+                                    BoxLayout:
+                                        size_hint_y: None
+                                        height: '80sp'
+                                        Label:
+                                            id: price
+                                            text: '50,00'
+                                            color: utils.get_color_from_hex('#15ad6bff')
+                                            text_size: self.size
+                                            valign: 'middle'
+                                            halign: 'right'
+                                            padding_x: '25sp'
+                                            font_size: '35sp'
+                                            bold: True
+                                        BoxLayout:
+                                            size_hint_x: None
+                                            width: '80sp'
+                                            orientation: 'vertical'
+                                            Widget:
+                                            Label:
+                                                size_hint_y: None
+                                                height: '15sp'
+                                                text: 'PREÇO'
+                                                color: price.color
+                                                text_size: self.size
+                                                halign: 'left'
+                                                font_size: '10sp'
+                                            Label:
+                                                text: 'MZN'
+                                                color: price.color
+                                                text_size: self.size
+                                                valign: 'middle'
+                                                halign: 'left'
+                                                font_size: '20sp'
+                                    GridLayout:
+                                        cols: 2
+                                        rows: 4
+                                        spacing:'2sp'
+                                        padding: 38, 0, 38, 0
+                                        Label:
+                                            text: 'Categoria:'
+                                            color: 0, 0, 0, .8
+                                            text_size: self.size
+                                            valign: 'middle'
+                                            halign: 'left'
+                                            font_size: '9sp'
+                                        Label:
+                                            text: 'Vegetais'
+                                            color: 0, 0, 0, .5
+                                            text_size: self.size
+                                            valign: 'middle'
+                                            halign: 'right'
+                                            font_size: '9sp'
+                                        Label:
+                                            text: 'Localização:'
+                                            color: 0, 0, 0, .8
+                                            text_size: self.size
+                                            valign: 'middle'
+                                            halign: 'left'
+                                            font_size: '9sp'
+                                        Label:
+                                            text: 'M. Fajardo'
+                                            color: 0, 0, 0, .5
+                                            text_size: self.size
+                                            valign: 'middle'
+                                            halign: 'right'
+                                            font_size: '9sp'
+                                        Label:
+                                            text: 'Quantidade:'
+                                            color: 0, 0, 0, .8
+                                            text_size: self.size
+                                            valign: 'middle'
+                                            halign: 'left'
+                                            font_size: '9sp'
+                                        Label:
+                                            text: '1KG'
+                                            color: 0, 0, 0, .5
+                                            text_size: self.size
+                                            valign: 'middle'
+                                            halign: 'right'
+                                            font_size: '9sp'
+                                        Label:
+                                            text: 'Certificação:'
+                                            color: 0, 0, 0, .8
+                                            text_size: self.size
+                                            valign: 'middle'
+                                            halign: 'left'
+                                            font_size: '9sp'
+                                        Label:
+                                            text: 'Certificado'
+                                            color: 0, 0, 0, .5
+                                            text_size: self.size
+                                            valign: 'middle'
+                                            halign: 'right'
+                                            font_size: '9sp'
+                                    BoxLayout:         
+                                        padding: '90sp', '5sp', '90sp', '0sp'
+                                        Button:
+                                            text: 'Editar'
+                                            background_down: ''
+                                            background_normal: ''
+                                            background_color: price.color
+
+                                    
+        Screen:
+            name: 'profile'
+            BoxLayout:
+                orientation: 'vertical'
+                Widget:
+                    size_hint_y: None
+                    height:'40sp'
+                Label:
+                    text: 'Meu perfil'
+                    size_hint_y: None
+                    text_size: self.size
+                    valign: 'middle'
+                    halign: 'left'
+                    padding_x: '15sp'
+                    height: '60sp'
+                    color: 0, 0, 0, .8
+                    font_size: '20sp'
+                    bold: True
+                BoxLayout:
+                    id: image
+                    size_hint_y: None
+                    height: '102sp'
+                    Widget:
+                        size_hint_x: None
+                        width: '15sp' 
+                    BoxLayout:
+                        size_hint: None, None
+                        height: image.height
+                        width: self.height
+                        canvas:
+                            Ellipse:
+                                size: self.size
+                                pos: self.pos
+                                source: 'source/image/perfil.png'
+                    Widget:
+                    Widget:
+                Label:
+                    size_hint_y: None
+                    height: '40sp'
+                    text: 'Francisco Ferdinando'
+                    bold: True
+                    color: 0, 0, 0, .8
+                    font_size: '25sp'
+                    text_size: self.size
+                    valign: 'middle'
+                    halign: 'left'
+                    padding_x: '15sp'
+                Label:
+                    text_size: self.size
+                    valign: 'middle'
+                    halign: 'left'
+                    text: 'Produtor de produtos agrícolas em maputo\nama cuidar e criar aves.'
+                    color: 0, 0, 0, .8
+                    font_size: '10sp'
+                    size_hint_y: None
+                    height: '30sp'
+                    padding_x: '15sp'
+    
+                BoxLayout:
+                    spacing: '15sp'
+                    orientation: 'vertical'
+                    Widget:
+                    BarrasU:
+                    BarrasU:
+                    BarrasU:                        
+                    Widget:
+        
+        Screen:
+            name: 'apresent'
+            ScrollView:
+                bar_width: 0
+                BoxLayout:
+                    size_hint_y: None
+                    height: self.minimum_height
+                    orientation: 'vertical'
+
+                    #
+                    BoxLayout:
+                        size_hint:None, None
+                        width: '200sp'
+                        height: '300sp'
+                        canvas:
+                            Color:
+                                rgba: 1, 1, 1, 1
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                        BoxLayout:
+                            padding: '12sp', '20sp', '18sp', '0sp'
+                            orientation: 'vertical'
+                            canvas:
+                                Rectangle:
+                                    source: 'source/image/elevation.png'
+                                    pos: self.pos
+                                    size: self.size
+                            BoxLayout:
+                                size_hint_y: None
+                                height: '30sp'
+                                padding: 1, 10, 0, 0
+                                Label:
+                                    text:'MZN'
+                                    color: 0, 0, 0, .8
+                                    font_size: '9sp'
+                                Label:
+                                    text: '89'
+                                    text_size: self.size
+                                    valign: 'middle'
+                                    halign: 'left'
+                                    color: price.color
+                                    font_size: '22sp'
+                                    bold: True
+                                Button:
+                                    opacity: 0
+                                BoxLayout:
+                                    padding: 7, 7, 7, 7
+                                    size_hint_x: None
+                                    width: '20sp'
+                                    Button:
+                                        border: 0, 0, 0, 0
+                                        background_normal: 'source/image/circle.png'
+                                        background_down: 'source/image/circle.png'
+                            Image:
+                                source: 'source/image/ananas.png'
+                                allow_stretch: True 
+                                size_hint_y: None
+                                height: '100sp'
+                            Label:
+                                color: 0, 0, 0, .8
+                                text: 'Ananas'
+                                bold: True
+                                font_size: '18sp'
+                                size_hint_y: None
+                                height: '26sp'
+                            Label:
+                                text: 'Da banca da dona Ana'
+                                color: price.color
+                                font_size: '9sp'
+                            BoxLayout:
+                                padding: 50, 0, 50, 0
+                                Button:
+                                    text: 'Ver'
+                                    bold: True
+                                    background_color: price.color
+                                    background_down: ''
+                                    background_normal: '' 
+                                    on_release: scm.current = 'reflex'                              
+                            Button:
+                                opacity: 0
+                                    
+                    #
+                    BoxLayout:
+                        size_hint:None, None
+                        width: '200sp'
+                        height: '300sp'
+                        canvas:
+                            Color:
+                                rgba: 1, 1, 1, 1
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                        BoxLayout:
+                            padding: '12sp', '20sp', '18sp', '0sp'
+                            orientation: 'vertical'
+                            canvas:
+                                Rectangle:
+                                    source: 'source/image/elevation.png'
+                                    pos: self.pos
+                                    size: self.size
+                            BoxLayout:
+                                size_hint_y: None
+                                height: '30sp'
+                                padding: 1, 10, 0, 0
+                                Label:
+                                    text:'MZN'
+                                    color: 0, 0, 0, .8
+                                    font_size: '9sp'
+                                Label:
+                                    text: '89'
+                                    text_size: self.size
+                                    valign: 'middle'
+                                    halign: 'left'
+                                    color: price.color
+                                    font_size: '22sp'
+                                    bold: True
+                                Button:
+                                    opacity: 0
+                                BoxLayout:
+                                    padding: 7, 7, 7, 7
+                                    size_hint_x: None
+                                    width: '20sp'
+                                    Button:
+                                        border: 0, 0, 0, 0
+                                        background_normal: 'source/image/circle.png'
+                                        background_down: 'source/image/circle.png'
+                            Image:
+                                source: 'source/image/pepino.png'
+                                allow_stretch: True 
+                                size_hint_y: None
+                                height: '100sp'
+                            Label:
+                                color: 0, 0, 0, .8
+                                text: 'Pepino'
+                                bold: True
+                                font_size: '18sp'
+                                size_hint_y: None
+                                height: '26sp'
+                            Label:
+                                text: 'Da banca da dona Ana'
+                                color: price.color
+                                font_size: '9sp'
+                            BoxLayout:
+                                padding: 50, 0, 50, 0
+                                Button:
+                                    text: 'Ver'
+                                    bold: True
+                                    background_color: price.color
+                                    background_down: ''
+                                    background_normal: ''                               
+                            Button:
+                                opacity: 0
+                    #
+                    BoxLayout:
+                        size_hint:None, None
+                        width: '200sp'
+                        height: '300sp'
+                        canvas:
+                            Color:
+                                rgba: 1, 1, 1, 1
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                        BoxLayout:
+                            padding: '12sp', '20sp', '18sp', '0sp'
+                            orientation: 'vertical'
+                            canvas:
+                                Rectangle:
+                                    source: 'source/image/elevation.png'
+                                    pos: self.pos
+                                    size: self.size
+                            BoxLayout:
+                                size_hint_y: None
+                                height: '30sp'
+                                padding: 1, 10, 0, 0
+                                Label:
+                                    text:'MZN'
+                                    color: 0, 0, 0, .8
+                                    font_size: '9sp'
+                                Label:
+                                    text: '50'
+                                    text_size: self.size
+                                    valign: 'middle'
+                                    halign: 'left'
+                                    color: price.color
+                                    font_size: '22sp'
+                                    bold: True
+                                Button:
+                                    opacity: 0
+                                BoxLayout:
+                                    padding: 7, 7, 7, 7
+                                    size_hint_x: None
+                                    width: '20sp'
+                                    Button:
+                                        border: 0, 0, 0, 0
+                                        background_normal: 'source/image/circle.png'
+                                        background_down: 'source/image/circle.png'
+                            Image:
+                                source: 'source/image/brokles.png'
+                                allow_stretch: True 
+                                size_hint_y: None
+                                height: '100sp'
+                            Label:
+                                color: 0, 0, 0, .8
+                                text: 'Brokles Verde'
+                                bold: True
+                                font_size: '18sp'
+                                size_hint_y: None
+                                height: '26sp'
+                            Label:
+                                text: 'Da banca da dona Ana'
+                                color: price.color
+                                font_size: '9sp'
+                            BoxLayout:
+                                padding: 50, 0, 50, 0
+                                Button:
+                                    text: 'Ver'
+                                    bold: True
+                                    background_color: price.color
+                                    background_down: ''
+                                    background_normal: ''                               
+                            Button:
+                                opacity: 0
+                    #
+                    BoxLayout:
+                        size_hint:None, None
+                        width: '200sp'
+                        height: '300sp'
+                        canvas:
+                            Color:
+                                rgba: 1, 1, 1, 1
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                        BoxLayout:
+                            padding: '12sp', '20sp', '18sp', '0sp'
+                            orientation: 'vertical'
+                            canvas:
+                                Rectangle:
+                                    source: 'source/image/elevation.png'
+                                    pos: self.pos
+                                    size: self.size
+                            BoxLayout:
+                                size_hint_y: None
+                                height: '30sp'
+                                padding: 1, 10, 0, 0
+                                Label:
+                                    text:'MZN'
+                                    color: 0, 0, 0, .8
+                                    font_size: '9sp'
+                                Label:
+                                    text: '109'
+                                    text_size: self.size
+                                    valign: 'middle'
+                                    halign: 'left'
+                                    color: price.color
+                                    font_size: '22sp'
+                                    bold: True
+                                Button:
+                                    opacity: 0
+                                BoxLayout:
+                                    padding: 7, 7, 7, 7
+                                    size_hint_x: None
+                                    width: '20sp'
+                                    Button:
+                                        border: 0, 0, 0, 0
+                                        background_normal: 'source/image/circle.png'
+                                        background_down: 'source/image/circle.png'
+                            Image:
+                                source: 'source/image/pimentos.png'
+                                allow_stretch: True 
+                                size_hint_y: None
+                                height: '100sp'
+                            Label:
+                                color: 0, 0, 0, .8
+                                text: 'Pimentos'
+                                bold: True
+                                font_size: '18sp'
+                                size_hint_y: None
+                                height: '26sp'
+                            Label:
+                                text: 'Da banca da dona Ana'
+                                color: price.color
+                                font_size: '9sp'
+                            BoxLayout:
+                                padding: 50, 0, 50, 0
+                                Button:
+                                    text: 'Ver'
+                                    bold: True
+                                    background_color: price.color
+                                    background_down: ''
+                                    background_normal: ''                               
+                            Button:
+                                opacity: 0
+
+                    #
+                    BoxLayout:
+                        size_hint:None, None
+                        width: '200sp'
+                        height: '300sp'
+                        canvas:
+                            Color:
+                                rgba: 1, 1, 1, 1
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                        BoxLayout:
+                            padding: '12sp', '20sp', '18sp', '0sp'
+                            orientation: 'vertical'
+                            canvas:
+                                Rectangle:
+                                    source: 'source/image/elevation.png'
+                                    pos: self.pos
+                                    size: self.size
+                            BoxLayout:
+                                size_hint_y: None
+                                height: '30sp'
+                                padding: 1, 10, 0, 0
+                                Label:
+                                    text:'MZN'
+                                    color: 0, 0, 0, .8
+                                    font_size: '9sp'
+                                Label:
+                                    text: '189'
+                                    text_size: self.size
+                                    valign: 'middle'
+                                    halign: 'left'
+                                    color: price.color
+                                    font_size: '22sp'
+                                    bold: True
+                                Button:
+                                    opacity: 0
+                                BoxLayout:
+                                    padding: 7, 7, 7, 7
+                                    size_hint_x: None
+                                    width: '20sp'
+                                    Button:
+                                        border: 0, 0, 0, 0
+                                        background_normal: 'source/image/circle.png'
+                                        background_down: 'source/image/circle.png'
+                            Image:
+                                source: 'source/image/pipiripiri.png'
+                                allow_stretch: True 
+                                size_hint_y: None
+                                height: '100sp'
+                            Label:
+                                color: 0, 0, 0, .8
+                                text: 'Pipiripi'
+                                bold: True
+                                font_size: '18sp'
+                                size_hint_y: None
+                                height: '26sp'
+                            Label:
+                                text: 'Da banca da dona Marta'
+                                color: price.color
+                                font_size: '9sp'
+                            BoxLayout:
+                                padding: 50, 0, 50, 0
+                                Button:
+                                    text: 'Ver'
+                                    bold: True
+                                    background_color: price.color
+                                    background_down: ''
+                                    background_normal: ''                               
+                            Button:
+                                opacity: 0
+                    #
+                    BoxLayout:
+                        size_hint:None, None
+                        width: '200sp'
+                        height: '300sp'
+                        canvas:
+                            Color:
+                                rgba: 1, 1, 1, 1
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                        BoxLayout:
+                            padding: '12sp', '20sp', '18sp', '0sp'
+                            orientation: 'vertical'
+                            canvas:
+                                Rectangle:
+                                    source: 'source/image/elevation.png'
+                                    pos: self.pos
+                                    size: self.size
+                            BoxLayout:
+                                size_hint_y: None
+                                height: '30sp'
+                                padding: 1, 10, 0, 0
+                                Label:
+                                    text:'MZN'
+                                    color: 0, 0, 0, .8
+                                    font_size: '9sp'
+                                Label:
+                                    text: '39'
+                                    text_size: self.size
+                                    valign: 'middle'
+                                    halign: 'left'
+                                    color: price.color
+                                    font_size: '22sp'
+                                    bold: True
+                                Button:
+                                    opacity: 0
+                                BoxLayout:
+                                    padding: 7, 7, 7, 7
+                                    size_hint_x: None
+                                    width: '20sp'
+                                    Button:
+                                        border: 0, 0, 0, 0
+                                        background_normal: 'source/image/circle.png'
+                                        background_down: 'source/image/circle.png'
+                            Image:
+                                source: 'source/image/feijao.png'
+                                allow_stretch: True 
+                                size_hint_y: None
+                                height: '100sp'
+                            Label:
+                                color: 0, 0, 0, .8
+                                text: 'Feijao Verde'
+                                bold: True
+                                font_size: '18sp'
+                                size_hint_y: None
+                                height: '26sp'
+                            Label:
+                                text: 'Da banca da dona Rosalinda'
+                                color: price.color
+                                font_size: '9sp'
+                            BoxLayout:
+                                padding: 50, 0, 50, 0
+                                Button:
+                                    text: 'Ver'
+                                    bold: True
+                                    background_color: price.color
+                                    background_down: ''
+                                    background_normal: ''                               
+                            Button:
+                                opacity: 0
+
+        Screen: 
+            name: 'reflex'
+            BoxLayout:
+                orientation: 'vertical'
+                BoxLayout:
+                    size_hint_y: None
+                    height: '45sp'
+                    Button:
+                        text: 'Voltar'
+                        size_hint_x:None
+                        width: '60sp'
+                        on_release: scm.current = 'apresent'
+                BoxLayout:
+                    canvas:
+                        Color:
+                            rgba: 1, 1, 1, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    size_hint_x: None
+                    width: osd.width
+                    orientation: 'vertical'
+                    Image:
+                        source: 'source/image/ananas.png'
+                        allow_stretch: True 
+                        size_hint_y: None
+                        height: '180sp'
+                    Label:
+                        size_hint_y:None
+                        height: '40sp'
+                BoxLayout:
+                    id: osd
+                    spacing: '15sp'
+                    orientation: 'vertical'
+                    size_hint_x: None
+                    width: '250sp'
+                    padding: 20, 0, 20, 0
+                    canvas:
+                        Color:  
+                            rgba: 1, 1, 1, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    
+                    BoxLayout:
+                        size_hint_y: None
+                        height: '50sp'
+                        Label:
+                            text: 'Ananas'
+                            text_size: self.size
+                            valign: 'middle'
+                            halign: 'left'
+                            bold: True
+                            size_hint_x: None
+                            width: '100sp'
+                            font_size: '28sp'
+                            color: 0, 0, 0, .8
+                        Label:
+                            text: 'MZN'
+                            text_size: self.size
+                            valign: 'middle'
+                            halign: 'right'
+                            bold: True
+                            size_hint_x: None
+                            width: '60sp'
+                            font_size: '9sp'
+                            color: 0, 0, 0, .7
+                        Label:
+                            text: '89'
+                            text_size: self.size
+                            valign: 'middle'
+                            halign: 'right'
+                            bold: True
+                            size_hint_x: None
+                            width: '30sp'
+                            font_size: '25sp'
+                            color: price.color
+                    GridLayout:
+                        size_hint_y:None
+                        height: '60sp'
+                        padding: 0, 0, 20, 0
+                        cols: 2
+                        rows: 2
+                        Label:
+                            text: 'Preços:'
+                            text_size: self.size
+                            valign: 'middle'
+                            halign: 'left'
+                            bold: True
+                            font_size: '9sp'
+                            color: 0, 0, 0, .8
+                        Label:
+                            text: 'Delivery:'
+                            text_size: self.size
+                            valign: 'middle'
+                            halign: 'right'
+                            bold: True
+                            font_size: '9sp'
+                            color: 0, 0, 0, .8
+                        Label:
+                            text: '1 kg - MZN 102,99\n500 gm - 47,00'
+                            text_size: self.size
+                            valign: 'middle'
+                            halign: 'left'
+                            bold: True
+                            font_size: '9sp'
+                            color: 0, 0, 0, .6
+                        Label:
+                            text: 'daqui a minutos\n '
+                            text_size: self.size
+                            valign: 'middle'
+                            halign: 'right'
+                            bold: True
+                            font_size: '9sp'
+                            color: 0, 0, 0, .6
+                    BoxLayout:
+                        padding: 0, 0, 100, 0
+                        size_hint_y: None
+                        height: '30sp'
+                        BoxLayout:
+                            canvas:
+                                Rectangle:
+                                    source: 'source/image/imput.png'
+                                    pos: self.pos
+                                    size: self.size
+
+                            Label:
+                                text:  'Qut'
+                                color: 0, 0, 0, .8
+                                font_size: '13sp'
+                            BoxLayout:
+                                padding: 0, 1, 2, 1
+                                TextInput:
+                                    text: '1'
+                                    multiline: False         
+                                    foreground_color: 0, 0, 0, 1
+                                    hint_text_color: 0,0,0,.8
+                                    cursor_color: 0,0,0,.9
+                                    background_normal: ''
+                                    background_active: ''
+                    BoxLayout:
+                        padding: 2, 15, 15, 0
+                        Button:
+                            text: 'Comprar agora'
+                            bold: True
+                            background_color: price.color
+                            background_normal: ''
+                            background_down: '' 
+                    Label:       
+    BoxLayout:
+        spacing: '15sp'
+        size_hint_x: None
+        padding: 0, 15, 0, 0
+        width: '50sp'
+        orientation: 'vertical'
+        canvas:
+            Color:
+                rgba: utils.get_color_from_hex('#ecf8f2ff')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Widget:
+            size_hint_y: None
+            height: '50sp'
+        GotoButton:
+            id: btn
+            background_normal: 'source/image/btn_optoes1.png'
+            background_down: 'source/image/btn_optoes2.png'
+            
+            on_parent: drop_menu.dismiss()
+            on_press: drop_menu.open(self)
+
+        DropDown:
+            id: drop_menu 
+            pos_hint: {'top': .95}
+            auto_width: False 
+            width: "100sp"
+            padding_x: '15sp'
+            
+            BoxLayout:
+                size_hint: None, None
+                width: '50sp'
+                height: '120sp'
+                BoxLayout:
+                    id: contete_configs
+                    orientation: 'vertical'
+                    
+                    Options:
+                        background_normal: 'source/image/add.png'
+                    Widget:
+                    Options:
+                        background_normal: 'source/image/search.png'
+                    Widget:
+                    Options:
+                        background_normal: 'source/image/config_acount.png'
+
+                BoxLayout:
+                    size_hint_x: None
+                    width: 20
+
+
+        Widget:
+        GotoButton:
+            state: "down" if scm.current == 'products' else 'normal'
+            background_normal: 'source/image/btn1_normal.png'
+            background_down: 'source/image/btn1_down.png'
+            on_press: 
+                scm.current = 'products'
+                scm.transition.direction = 'down'
+        GotoButton:
+            state: "down" if scm.current == 'stand' else 'normal'
+            background_normal: 'source/image/btn2_normal.png'
+            background_down: 'source/image/btn2_down.png'
+            on_press: 
+                scm.current = 'stand'
+                scm.transition.direction = 'up'
+        GotoButton:
+            state: "down" if scm.current == 'profile' else 'normal'
+            background_normal: 'source/image/btn3_normal.png'
+            background_down: 'source/image/btn3_down.png'
+            on_press: 
+                scm.current = 'profile'
+                scm.transition.direction = 'up'
+        Widget:
+    BoxLayout:
+        size_hint_x: None
+        width: '10sp'
+        canvas:
+            Color:
+                rgba: utils.get_color_from_hex('#ecf8f2ff')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+# Dynamic widgets
+<GotoButton@ToggleButton>:
+    border: 0, 0, 0, 0
+    size_hint_y: None
+    height:'50sp'
+
+<Barras>:
+    canvas: 
+        Color:
+            rgba: utils.get_color_from_hex('#ecf8f2ff')
+        Rectangle: 
+            pos: self.pos
+            size: self.size
+    size_hint: None, None
+    height: '40sp'
+    width: '170sp'
+    orientation: 'horizontal'
+    Button:    
+        text: 'Requisicao x'
+        halign: 'left'
+        valign: 'middle'
+        text_size: self.size
+        color: 0, 0, 0, .8
+        padding_x: '5sp' 
+        background_normal: ''
+        background_down: ''
+        background_color: 0, 0, 0, 0
+        on_press: app.root.animation_to_barras(root)
+        on_release: app.root.animation_to_barras_button(negociar)
+
+    Button:
+        id: negociar
+        border: 0, 0, 0, 0
+        size_hint_x: None
+        width: '10sp'
+        background_normal: 'source/image/requ1.png'
+        font_size: '11sp'
+        bold: True
+        on_press: app.root.animation_to_barras_bind(root, self)
+        on_release: app.root.animation_to_barras_button_bind(self)
+
+
+<Options@Button>: 
+    border: 0, 0, 0, 0
+    size_hint: None, None
+    height: '25sp'
+    width: '25sp'
+
+<BarrasP>:
+    canvas: 
+        Color:
+            rgba: utils.get_color_from_hex('#ecf8f2ff')
+        Rectangle: 
+            pos: self.pos
+            size: self.size
+    size_hint: None, None
+    height: '40sp'
+    width: '170sp'
+    orientation: 'horizontal'
+    Button:    
+        text: 'Produto x'
+        halign: 'left'
+        valign: 'middle'
+        text_size: self.size
+        color: 0, 0, 0, .8
+        padding_x: '5sp' 
+        background_normal: ''
+        background_down: ''
+        background_color: 0, 0, 0, 0
+        on_press: app.root.animation_to_barrasp(root)
+        on_release: app.root.animation_to_barrasp_button(negociar)
+
+    Button:
+        id: negociar
+        border: 0, 0, 0, 0
+        size_hint_x: None
+        width: '10sp'
+        background_normal: 'source/image/requ1.png'
+        font_size: '11sp'
+        bold: True
+        on_press:
+            app.root.ids.scm.current = 'apresent'
+            app.root.animation_to_barrasp_bind(root, self)
+        on_release: app.root.animation_to_barrasp_button_bind(self)
+<BarrasU>:
+    canvas: 
+        Color:
+            rgba: utils.get_color_from_hex('#ecf8f2ff')
+        Rectangle: 
+            pos: self.pos
+            size: self.size
+    size_hint: None, None
+    height: '40sp'
+    width: '170sp'
+    orientation: 'horizontal'
+    Button:    
+        text: 'Opcao x'
+        halign: 'left'
+        valign: 'middle'
+        text_size: self.size
+        color: 0, 0, 0, .8
+        padding_x: '5sp' 
+        background_normal: ''
+        background_down: ''
+        background_color: 0, 0, 0, 0
+        on_press: app.root.animation_to_barrasu(root)
+        on_release: app.root.animation_to_barrasu_button(negociar)
+
+    Button:
+        id: negociar
+        border: 0, 0, 0, 0
+        size_hint_x: None
+        width: '10sp'
+        background_normal: 'source/image/requ1.png'
+        font_size: '11sp'
+        bold: True
+        on_press: app.root.animation_to_barrasu_bind(root, self)
+        on_release: app.root.animation_to_barrasu_button_bind(self)
